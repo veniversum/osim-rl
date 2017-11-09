@@ -184,7 +184,7 @@ class OsimEnv(gym.Env):
         self.istep = self.istep + 1
 
         res = [ self.get_observation(), self.compute_reward(), self.is_done(), {} ]
-        return res
+        return np.array(res)
 
     def _render(self, mode='human', close=False):
         return

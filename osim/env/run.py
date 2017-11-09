@@ -145,7 +145,7 @@ class RunEnv(OsimEnv):
 
 #        feet = [opensim.HuntCrossleyForce.safeDownCast(self.osim_model.forceSet.get(j)) for j in range(20,22)]
         self.current_state = pelvis_pos + pelvis_vel + joint_angles + joint_vel + mass_pos + mass_vel + list(flatten(body_transforms)) + muscles + obstacle
-        return self.current_state
+        return np.array(self.current_state)
 
     def create_obstacles(self):
         x = 0
